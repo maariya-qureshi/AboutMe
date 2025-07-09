@@ -11,10 +11,19 @@ struct ContentView: View {
     var body: some View {
         //zstack for background color, allows for things to be on top of each other (images on the background color)
         ZStack {
+            Color("bk")
+                .ignoresSafeArea()
             VStack { //to organize content vertically:
                 
                 Text(("all about maariya"))
                     .font(.title)
+                    .fontWeight(.bold)
+                    .padding()
+                    .foregroundColor(Color("p"))
+                
+                    .background(Rectangle()
+                        .foregroundColor(Color("a")))
+                    .cornerRadius(15)
                     .padding()
                 
                 //2 H stacks to have pictures + verbs side by side:
@@ -26,9 +35,10 @@ struct ContentView: View {
                         .padding()
                     Text("painting nature!")
                         .padding()
+                        .foregroundColor(Color("p"))
                 }
                 .background(Rectangle()
-                    .foregroundColor(Color(hue: 0.934, saturation: 0.328, brightness: 0.887)))
+                    .foregroundColor(Color("a")))
                 .cornerRadius(15)
                 .shadow(radius: 15)
                 .padding()
@@ -43,9 +53,10 @@ struct ContentView: View {
                         .padding()
                     Text("family & friends!")
                         .padding()
+                        .foregroundColor(Color("p"))
                 }
                 .background(Rectangle()
-                    .foregroundColor(Color(hue: 0.934, saturation: 0.328, brightness: 0.887)))
+                    .foregroundColor(Color("a")))
                 .cornerRadius(15)
                 .shadow(radius: 15)
                 .padding()
